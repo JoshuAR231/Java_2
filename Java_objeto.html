@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <center><h1>Notas</h1></center>
+<p id="demo"></p>
+<script>
+var person =[{firstName:"Pedro", lastName:"Torres", nota1:78, nota2:89, nota3:34 },
+                {firstName:"John", lastName:"Perez", nota1:98, nota2:56, nota3:78 },
+                {firstName:"Jose", lastName:"Cruz",nota1:23, nota2:98, nota3:210 }];
+var text="";
+function prom(n1,n2,n3){ 
+var i = (n1+n2+n3)/3.0 ;
+return i.toPrecision(2); }
+function final(prom){
+ var nota;
+  if (prom >=90 && prom<=100)
+     nota ="A";
+  else if (prom>= 80 && prom<90)
+    nota = "B";
+  else if (prom>=70 && prom<80)
+    nota = "C"; 
+ else if (prom>= 60 && prom<70)
+    nota = "D";
+ else if (prom>= 0 && prom<60)
+    nota = "F";
+ else 
+nota = "DATA ERROR"
+return nota; }
+
+    text = "<center><table style=width:100 border=3 ><tr><th> Nombre</th><th>Apellido</th><th>nota 1</th><th>nota 2</th><th>nota 3</th><th>promedio</th><th>Final</th></tr>";
+for(i=0;i<=2;i++)
+{
+  promedio =prom(Number(person[i].nota1),Number(person[i].nota2), Number(person[i].nota3));
+  nota_final= final(Number(promedio));
+    text += "<tr><td>" + person[i].firstName + "</td><td> " + person[i].lastName + "</td><td>"
+        + person[i].nota1 + "</td><td>  " + person[i].nota2 + "</td><td>  " + person[i].nota3 + "</td><td>"
+     + promedio + "</td><td>" + nota_final + "</td></tr>";
+    
+}
+    text +="</table></center>";
+
+document.getElementById("demo").innerHTML = text;
+
+</script>
+
+</body>
+</html>

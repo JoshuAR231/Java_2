@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><h3>Loops</h3></head>
+<body style="font-size:50px">
+<div style="background-color:blue; width:500px">
+
+
+<p id="loop"></p>
+</div>
+<script>
+var text = " ";
+var e;
+for (e = 1; e <= 18; e++) 
+{
+   for(i=1;i<=e;i++)
+      {
+         text += "*";
+      }
+         text += "<br>";
+}
+document.getElementById("loop").innerHTML = text;
+</script>
+</body>
+</html>
